@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doma u Kapucínov</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: url('DSC03831.JPG') no-repeat center center/cover;
+      background: url('DSC03831.jpg') no-repeat center center/cover;
       position: relative;
       color: #fff;
     }
@@ -21,7 +22,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(137, 81, 41, 0.7); /* brown overlay */
+      background-color: rgba(137, 81, 41, 0.7);
       z-index: 0;
     }
     header, .slogan, .donation-box, footer {
@@ -31,19 +32,20 @@
     header {
       text-align: center;
       padding: 2rem;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Baloo 2', sans-serif;
       color: #fff;
     }
     .donation-box {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 2rem;
       max-width: 400px;
-      margin: 2rem auto;
+      margin: 2rem 2rem 2rem 4rem;
       border-radius: 8px;
       color: #3e1f0d;
     }
     h2 {
       margin-top: 0;
+      font-family: 'Baloo 2', sans-serif;
     }
     .amount-option {
       display: flex;
@@ -95,6 +97,7 @@
     }
     footer {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-around;
       padding: 2rem;
       background-color: rgba(255, 255, 255, 0.9);
@@ -103,10 +106,12 @@
     }
     footer div {
       flex: 1;
+      min-width: 150px;
+      margin-bottom: 1rem;
     }
     .slogan {
       text-align: center;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Baloo 2', sans-serif;
       font-size: 2rem;
       margin-top: 1rem;
       color: #fff;
@@ -122,29 +127,29 @@
 </head>
 <body>
   <header>
-    <h1>The Green<br />Trees Initiative</h1>
+    <h1>Doma u Kapucínov</h1>
   </header>
   <div class="slogan">POMÔŽTE DEŤOM, KTORÉ V ŽIVOTE NEMALI ROVNAKÉ ŠTARTOVACIE ČIARY</div>
   <div class="donation-box">
-    <h2>Vyberte dar</h2>
+    <h2>Vyberte výšku daru</h2>
     <label class="amount-option">
-      <input type="radio" name="amount" value="10" checked /> $10
+      <input type="radio" name="amount" value="10" checked /> 10 €
     </label>
     <label class="amount-option">
-      <input type="radio" name="amount" value="25" /> $25
+      <input type="radio" name="amount" value="25" /> 25 €
     </label>
     <label class="amount-option">
-      <input type="radio" name="amount" value="50" /> $50
+      <input type="radio" name="amount" value="50" /> 50 €
     </label>
-    <div class="custom-amount">Enter a custom donation amount</div>
+    <div class="custom-amount">Zadajte vlastnú sumu daru</div>
 
     <h2>Chcete darovať pravidelne?</h2>
     <div class="frequency-selector">
       <label>
-        <input type="radio" name="frequency" value="mesačne" checked /> Monthly
+        <input type="radio" name="frequency" value="mesačne" checked /> Mesačne
       </label>
       <label>
-        <input type="radio" name="frequency" value="jednorázovo" /> One time
+        <input type="radio" name="frequency" value="jednorazovo" /> Jednorazovo
       </label>
     </div>
     <button class="btn">Darovať</button>
@@ -154,28 +159,27 @@
       <strong>Doma u Kapucínov<br />nezisková organizácia</strong>
     </div>
     <div>
-      <strong>CONTACT US</strong><br />
-      123 Anywhere St.<br />
-      Cityname, NY 12345<br />
-      (123) 456-7890<br />
-      contact@npo.org
+      <strong>Kontakt</strong><br />
+      Hlavná 123<br />
+      Bratislava, Slovensko<br />
+      +421 948 123 456<br />
+      info@domaukapucinov.sk
     </div>
     <div>
-      <strong>LINKS</strong><br />
-      The issue<br />
-      How we help<br />
-      Get involved<br />
-      Latest news
+      <strong>Odkazy</strong><br />
+      Naša misia<br />
+      Ako pomáhame<br />
+      Zapojte sa<br />
+      Novinky
     </div>
     <div>
-      <strong>FOLLOW US</strong><br />
+      <strong>Sledujte nás</strong><br />
       Facebook<br />
-      Twitter<br />
       Instagram<br />
-      Medium
+      YouTube
     </div>
     <div class="hashtag">
-      #STOP<br />CLIMATE<br />CHANGE
+      #POMÔŽME<br />DEŤOM<br />SPOLU
     </div>
   </footer>
 </body>
