@@ -11,7 +11,7 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: url('DSC03831.jpg') no-repeat center center/cover;
+      background: url('DSC03831.JPG') no-repeat center center/cover;
       position: relative;
       color: #fff;
     }
@@ -29,8 +29,13 @@
       position: relative;
       z-index: 1;
     }
-    .top-banner {
+    .top-banner-wrapper {
+      position: relative;
+      z-index: 2;
       background-color: white;
+      width: 100%;
+    }
+    .top-banner {
       color: #895129;
       text-align: center;
       padding: 1rem;
@@ -137,8 +142,10 @@
   </style>
 </head>
 <body>
-  <div class="top-banner">
-    Doma u Kapucínov
+  <div class="top-banner-wrapper">
+    <div class="top-banner">
+      Doma u Kapucínov
+    </div>
   </div>
   <div class="main-content">
     <div class="donation-box">
