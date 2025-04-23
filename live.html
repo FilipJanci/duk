@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOMA U KAPUCÍNOV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Patrick+Hand+SC&family=Poppins:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('DSC03831.JPG') no-repeat center center/cover;
+      position: relative;
+      color: #fff;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(137, 81, 41, 0.7);
+      z-index: 0;
+    }
+    header, .donation-box, footer {
+      position: relative;
+      z-index: 1;
+    }
+    .top-banner-wrapper {
+      position: relative;
+      z-index: 2;
+      background-color: white;
+      width: 100%;
+    }
+    .top-banner {
+      color: #895129;
+      text-align: center;
+      padding: 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+    }
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 2rem;
+    }
+    .donation-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      max-width: 400px;
+      margin: 1rem;
+      border-radius: 8px;
+      color: #3e1f0d;
+      flex: 1;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .slogan {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.8rem;
+      color: white !important;
+      margin: 3rem 1rem 1rem 6rem;
+      max-width: 300px;
+      line-height: 1.4;
+      flex: 1;
+      z-index: 10;
+      position: relative;
+    }
+    h2 {
+      margin-top: 0;
+      font-family: 'Baloo 2', sans-serif;
+    }
+    .amount-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      background-color: #f4e9e2;
+      color: #3e1f0d;
+      padding: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .amount-option input {
+      margin-right: 1rem;
+    }
+    .custom-amount {
+      display: block;
+      margin: 1rem 0;
+      color: #895129;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .frequency-selector {
+      display: flex;
+      margin-top: 1rem;
+    }
+    .frequency-selector label {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      background: #f4e9e2;
+      color: #3e1f0d;
+      margin-right: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .frequency-selector input {
+      display: none;
+    }
+    .btn {
+      background-color: #895129;
+      border: none;
+      padding: 1rem;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 5px;
+    }
+    form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #3e1f0d;
+    }
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="number"]:focus {
+      outline: none;
+      border-color: #895129;
+      box-shadow: 0 0 5px rgba(137, 81, 41, 0.5);
+    }
+    form input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+    #company-fields {
+      background-color: #f9f4f0;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #3e1f0d;
+      font-size: 0.9rem;
+    }
+    footer div {
+      flex: 1;
+      min-width: 150px;
+      margin-bottom: 1rem;
+    }
+    .hashtag {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: right;
+      padding-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-banner-wrapper">
+    <div class="top-banner">
+      DOMA U KAPUCÍNOV
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="donation-box">
+      <h2>Vyberte výšku daru</h2>
+      <form 
+        action="https://api.darujme.sk/v1/donations/post/" 
+        method="post" 
+        enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="campaign_id" value="2a04b69e-d7dd-4c02-a04c-6f6645349f8b" />
+        <input type="hidden" name="value" id="value" />
+        <input type="hidden" name="kind" value="person" />
+
+        <label class="amount-option">
+          <input type="radio" name="fixed_value" value="10" onchange="updateValue(this.value)" /> 10 €
+        </label>
+        <label class="amount-option">
+          <input type="radio" name="fixed_value" value="25" onchange="updateValue(this.value)" /> 25 €
+        </label>
+        <label class="amount-option">
+          <input type="radio" name="fixed_value" value="50" onchange="updateValue(this.value)" /> 50 €
+        </label>
+        <div>
+          <label>Vlastná suma:
+            <input type="number" name="custom_value" id="custom_value" oninput="updateValue(this.value)" step="0.01" placeholder="Zadajte sumu" /> €
+          </label>
+        </div>
+
+        <h2>Osobné údaje</h2>
+        <label>Meno:
+          <input type="text" name="first_name" required />
+        </label>
+        <label>Priezvisko:
+          <input type="text" name="last_name" required />
+        </label>
+        <label>Email:
+          <input type="email" name="email" required />
+        </label>
+        <label>Telefón:
+          <input type="text" name="additional_data[fdcee4ce-23c6-4154-ab04-bdc54adc1016]" />
+        </label>
+
+        <label>
+          <input type="checkbox" name="is_company" onchange="toggleCompanyFields(this)" /> Chcem darovať ako právnická osoba
+        </label>
+
+        <div id="company-fields" style="display: none;">
+          <label>Názov spoločnosti:
+            <input type="text" name="company_name" />
+          </label>
+        </div>
+
+        <label>
+          <input type="checkbox" name="is_anonymous" /> Anonymný dar
+        </label>
+        <label>
+          <input type="checkbox" name="terms_consent" required /> Súhlasím s podmienkami DARUJME.sk
+        </label>
+        <label>
+          <input type="checkbox" name="gdpr_consent" required /> Súhlasím s GDPR organizácie
+        </label>
+
+        <h2>Chcete darovať pravidelne?</h2>
+        <div class="frequency-selector">
+          <label>
+            <input type="radio" name="periodicity" value="monthly" /> Mesačne
+          </label>
+          <label>
+            <input type="radio" name="periodicity" value="one_time" /> Jednorázovo
+          </label>
+        </div>
+
+        <h2>Vyberte spôsob platby</h2>
+        <label>
+          <input type="radio" name="payment_method_id" value="1342d2af-a343-4e73-9f5a-7593b9978697" /> CardPay
+        </label>
+        <label>
+          <input type="radio" name="payment_method_id" value="c58f76e1-cade-4300-9531-71e275476edd" /> PayPal
+        </label>
+        <label>
+          <input type="radio" name="payment_method_id" value="38409407-c4ec-4060-b4a1-4792f29335ad" /> TatraPay
+        </label>
+        <label>
+          <input type="radio" name="payment_method_id" value="c07e714c-74ed-4ac6-ab63-3898a73f1fa0" /> SporoPay
+        </label>
+        <label>
+          <input type="radio" name="payment_method_id" value="f2e7956e-a3f6-4bff-9e18-2ab3096a5bed" /> Bankový prevod
+        </label>
+
+        <button type="submit" class="btn">Darovať</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div>
+      © DOMA U KAPUCÍNOV
+    </div>
+    <div>
+      <p>Kontakt: info@domaukapucinov.sk</p>
+    </div>
+    <div class="hashtag">
+      #DobrýDar
+    </div>
+  </footer>
+
+  <script>
+    function updateValue(value) {
+      document.getElementById('value').value = value;
+    }
+
+    function toggleCompanyFields(checkbox) {
+      const companyFields = document.getElementById('company-fields');
+      companyFields.style.display = checkbox.checked ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
